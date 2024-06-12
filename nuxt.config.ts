@@ -2,8 +2,11 @@
 import { resolve } from "path"
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   alias: {
     "@": resolve(__dirname, "/"), 
   },
-  modules: ["vuetify-nuxt-module"]
+
+  css:["~/assets/main.scss"],
+  modules: ["@nuxtjs/tailwindcss"]
 })

@@ -2,7 +2,7 @@
   <div>
     <Navbar />
   </div>
-  <div>
+  <div class="border border-black p-5">
     <h1 class="text-blue-500">Hero</h1>
     <p class="text-purple-700">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis velit

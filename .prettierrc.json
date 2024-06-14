@@ -2,5 +2,7 @@
   "semi": false,
   "singleQuote": true,
   "tabWidth": 2,
-  "vueIndentScriptAndStyle": true
+  "vueIndentScriptAndStyle": true,
+  "plugins": ["prettier-plugin-css-order","prettier-plugin-tailwindcss"],
+  "tailwindPreserveWhitespace": true
 }

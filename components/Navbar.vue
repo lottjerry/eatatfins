@@ -18,12 +18,18 @@
     </div>
     <!-- *********************** RIGHT NAV *********************** -->
     <div class="flex gap-8 md:gap-14 xl:gap-16">
-      <button class="right-nav-btn group hidden md:flex">
-        <MapMarker
-          class="text-primary w-5 fill-current pt-1 transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
-        />
-        <span>Locate Fins</span>
-      </button>
+      <a
+        href="https://www.google.com/maps/dir//1305+W+6th+St,+Laurel,+MS+39440/@31.6957887,-89.2253126,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x888334383b809fc1:0x542ccbcea7a71af6!2m2!1d-89.1428517!2d31.6958112?entry=ttu"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><button class="right-nav-btn group hidden md:flex">
+          <MapMarker
+            class="text-primary w-5 fill-current pt-1 transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
+          />
+          <span>Locate Fins</span>
+        </button></a
+      >
+
       <button class="right-nav-btn group">
         <AccountCircle
           class="text-primary w-5 fill-current pt-1 transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"

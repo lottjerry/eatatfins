@@ -10,7 +10,7 @@
         />
       </button>
       <button
-        class="inline-flex h-9 w-24 items-center justify-center rounded-xl bg-[#06398C] px-4 py-2 text-sm font-bold text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:h-11 md:w-32 md:text-lg"
+        class="bg-primary inline-flex h-9 w-24 items-center justify-center rounded-xl px-4 py-2 text-sm font-bold text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:h-11 md:w-32 md:text-lg"
       >
         <Silverware class="mr-2 w-5 fill-current md:w-6" />
         <span>Menu</span>
@@ -20,20 +20,20 @@
     <div class="flex gap-8 md:gap-14 xl:gap-16">
       <button class="right-nav-btn group hidden md:flex">
         <MapMarker
-          class="w-5 fill-current pt-1 text-[#06398C] transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
+          class="text-primary w-5 fill-current pt-1 transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
         />
         <span>Locate Fins</span>
       </button>
       <button class="right-nav-btn group">
         <AccountCircle
-          class="w-5 fill-current pt-1 text-[#06398C] transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
+          class="text-primary w-5 fill-current pt-1 transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
         />
         <span>Sign In</span>
       </button>
       <button class="right-nav-btn group">
         <span>0</span>
         <Shopping
-          class="w-5 fill-current text-[#06398C] transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
+          class="text-primary w-5 fill-current transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
         />
       </button>
     </div>

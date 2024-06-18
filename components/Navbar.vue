@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="flex items-center justify-around py-2 transition-all duration-300 ease-in md:justify-center md:gap-[12rem] xl:gap-[20rem]"
+    class="sticky top-0 flex items-center justify-around bg-white py-2 transition-all duration-300 ease-in md:justify-center md:gap-[12rem] xl:gap-[20rem]"
   >
     <!-- *********************** LEFT NAV *********************** -->
     <div class="flex items-center gap-5 md:gap-10 xl:gap-16">
@@ -10,7 +10,8 @@
         />
       </button>
       <button
-        class="bg-primary inline-flex h-9 w-24 items-center justify-center rounded-xl px-4 py-2 text-sm font-bold text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:h-11 md:w-32 md:text-lg"
+        @click="toggleMenuNav"
+        class="inline-flex h-9 w-24 items-center justify-center rounded-xl bg-primary px-4 py-2 text-sm font-bold text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:h-11 md:w-32 md:text-lg"
       >
         <Silverware class="mr-2 w-5 fill-current md:w-6" />
         <span>Menu</span>
@@ -24,7 +25,7 @@
         rel="noopener noreferrer"
         ><button class="right-nav-btn group hidden md:flex">
           <MapMarker
-            class="text-primary w-5 fill-current pt-1 transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
+            class="w-5 fill-current pt-1 text-primary transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
           />
           <span>Locate Fins</span>
         </button></a
@@ -32,16 +33,24 @@
 
       <button class="right-nav-btn group">
         <AccountCircle
-          class="text-primary w-5 fill-current pt-1 transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
+          class="w-5 fill-current pt-1 text-primary transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
         />
         <span>Sign In</span>
       </button>
       <button class="right-nav-btn group">
         <span>0</span>
         <Shopping
-          class="text-primary w-5 fill-current transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
+          class="w-5 fill-current text-primary transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
         />
       </button>
     </div>
   </nav>
 </template>
+
+<script setup>
+  import { useAppStore } from '~/stores/appStore'
+
+  const appStore = useAppStore()
+  const { isMenuNavOpen } = storeToRefs(appStore)
+  const { toggleMenuNav } = appStore
+</script>

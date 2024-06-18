@@ -1,7 +1,8 @@
 <template>
   <Navbar />
-  <div class="m-3 border">
+  <div>
     <slot />
   </div>
   <Footer />
+  <MenuNav />
 </template>

@@ -1,11 +1,9 @@
 <template>
   <Button>
-    <div
-      class="btn-icon"
-    >
+    <div>
       <slot />
     </div>
-    <p>{{ text }}</p>
+    <p class="w-28">{{ text }}</p>
   </Button>
 </template>
 

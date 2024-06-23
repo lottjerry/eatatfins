@@ -1,85 +1,103 @@
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
+
+
 export const useAppStore = defineStore('appStore', () => {
   const isMenuNavOpen = ref(false)
-
   const currentDay = ref('')
 
   const menuItems = ref([
     {
-      componentName: 'Pasta',
+      component: 'Pasta',
       text: 'Starters',
       isSpecial: false,
+      resolvedComponent: '',
     },
     {
-      componentName: 'AccountCircle',
+      component: 'Facebook',
       text: 'Salads',
       isSpecial: false,
+      resolvedComponent: '',
     },
     {
-      componentName: 'Pasta',
+      component: 'Pasta',
       text: 'Soup/Gumbo',
       isSpecial: false,
+      resolvedComponent: '',
     },
     {
-      componentName: 'Pasta',
+      component: 'Pasta',
       text: 'Burgers',
       isSpecial: false,
+      resolvedComponent: '',
     },
     {
-      componentName: 'Pasta',
+      component: 'Pasta',
       text: 'Special Entrees',
       isSpecial: false,
+      resolvedComponent: '',
     },
     {
-      componentName: 'Pasta',
+      component: 'Pasta',
       text: 'Entrees',
       isSpecial: false,
+      resolvedComponent: '',
     },
     {
-      componentName: 'Pasta',
+      component: 'Pasta',
       text: 'Po-Boys',
       isSpecial: false,
+      resolvedComponent: '',
     },
     {
-      componentName: 'Pasta',
+      component: 'Pasta',
       text: 'Pasta',
       isSpecial: false,
+      resolvedComponent: '',
     },
     {
-      componentName: 'Pasta',
+      component: 'Pasta',
       text: 'Kids Plates',
       isSpecial: false,
+      resolvedComponent: '',
     },
     {
-      componentName: 'Pasta',
+      component: 'Pasta',
       text: 'Sides',
       isSpecial: false,
+      resolvedComponent: '',
     },
     {
-      componentName: 'Pasta',
+      component: 'Pasta',
       text: 'Drinks',
       isSpecial: false,
+      resolvedComponent: '',
     },
     {
-      componentName: 'Pasta',
+      component: 'Pasta',
       text: 'Specials',
       isSpecial: false,
+      resolvedComponent: '',
     },
     {
-      componentName: 'Pasta',
+      component: 'Pasta',
       text: 'Thursday Only',
       isSpecial: true,
       specialDay: 'Thursday',
+      resolvedComponent: '',
     },
     {
-      componentName: 'Pasta',
+      component: 'Pasta',
       text: 'Friday Only',
       isSpecial: true,
       specialDay: 'Friday',
+      resolvedComponent: '',
     },
     {
-      componentName: 'Pasta',
+      component: 'Pasta',
       text: 'All Items',
       isSpecial: false,
+      resolvedComponent: '',
     },
   ])
 
@@ -91,5 +109,11 @@ export const useAppStore = defineStore('appStore', () => {
     currentDay.value = new Date().toLocaleString('en-us', { weekday: 'long' })
   }
 
-  return { isMenuNavOpen, toggleMenuNav, menuItems,  currentDay, setCurrentDay}
+  return {
+    isMenuNavOpen,
+    toggleMenuNav,
+    menuItems,
+    currentDay,
+    setCurrentDay,
+  }
 })

@@ -51,7 +51,7 @@
         </div>
       </div>
       <!-- *********************** COPYRIGHT *********************** -->
-      <p class="p-2 text-center text-sm">
+      <p class="p-4 text-center text-sm">
         © eatatfins.com. All rights reserved. Website Designed and Developed by
         <a
           href="https://jerrylott.com"

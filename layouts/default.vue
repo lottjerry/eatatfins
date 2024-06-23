@@ -6,3 +6,8 @@
   <Footer />
   <MenuNav />
 </template>
+
+<script setup>
+
+
+</script>

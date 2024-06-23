@@ -2,20 +2,21 @@
   <div class="flex">
     <div
       :class="[
-        'fixed inset-y-0 left-0 w-full bg-white text-black transition-all duration-500 ease-in-out',
+        'fixed inset-y-0 left-0 w-full md:w-[400px] bg-white text-black transition-all duration-500 ease-in-out md:border md:rounded-xl',
         { '-translate-x-full': !isMenuNavOpen },
       ]"
     >
-      <div class="flex justify-between p-4 shadow-md shadow-primary/50">
+      <div class="flex justify-between p-4 shadow-md shadow-primary/50 rounded-xl m-2">
         <h1 class="text-4xl">Menu</h1>
-        <CloseCircle
-          class="w-8 cursor-pointer fill-current pt-1 text-black transition-all duration-500 ease-in-out hover:text-primary hover:text-opacity-50"
+        <LeftCircle
+          class="w-8 cursor-pointer fill-current pt-1 text-black transition-all duration-500 ease-in-out hover:text-primary/50 hover:-translate-x-2"
           @click="toggleMenuNav"
         />
       </div>
-      <nav class="grid grid-cols-2 gap-5 p-5" >
+      <nav class="grid grid-cols-2 gap-5 p-5">
         <MenuButton
-        v-for="(menuItem, index) in menuItems" :key="index"
+          v-for="(menuItem, index) in menuItems"
+          :key="index"
           :text="menuItem.text"
           :class="{
             'menu-btn group':
@@ -25,9 +26,11 @@
               menuItem.isSpecial && menuItem.specialDay !== currentDay,
           }"
         >
-          <!-- <component :is="menuItem.componentName"></component> -->
-          <Pasta  :class="{
-            'w-7 fill-current text-primary/20 ':
+          <component :is="menuItem.resolvedComponent"   :class="{
+            'btn-icon':
+              menuItem.isSpecial === false ||
+              (menuItem.isSpecial && menuItem.specialDay === currentDay),
+            'btn-icon-disabled':
               menuItem.isSpecial && menuItem.specialDay !== currentDay,
           }"/>
         </MenuButton>
@@ -35,19 +38,21 @@
     </div>
   </div>
 </template>
+
 <script setup>
   import { storeToRefs } from 'pinia'
-  import { onMounted } from 'vue'
+  import { onMounted, resolveComponent } from 'vue'
   import { useAppStore } from '~/stores/appStore'
 
   const appStore = useAppStore()
-  const { isMenuNavOpen } = storeToRefs(appStore)
-  const { menuItems } = storeToRefs(appStore)
-  const { currentDay } = storeToRefs(appStore)
-  const { setCurrentDay } = appStore
-  const { toggleMenuNav } = appStore
+  const { isMenuNavOpen, menuItems, currentDay } = storeToRefs(appStore)
+  const { setCurrentDay, toggleMenuNav, resolveMenuComponents } = appStore
 
   onMounted(() => {
     setCurrentDay()
+    menuItems.value.forEach(async (item) => {
+      item.resolvedComponent = resolveComponent('Facebook') // Works
+      console.log(item.resolvedComponent)
+    })
   })
 </script>

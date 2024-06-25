@@ -6,13 +6,15 @@
         { '-translate-x-full': !isMenuNavOpen },
       ]"
     >
+    <!-- *********************** MenuNav Top Nav *********************** -->
       <div class="flex justify-between p-4 shadow-md shadow-primary/50 rounded-xl m-2">
         <h1 class="text-4xl">Menu</h1>
-        <LeftCircle
+        <Arrow
           class="w-8 cursor-pointer fill-current pt-1 text-black transition-all duration-500 ease-in-out hover:text-primary/50 hover:-translate-x-2"
           @click="toggleMenuNav"
         />
       </div>
+      <!-- *********************** MenuNav Botton Nav Buttons *********************** -->
       <nav class="grid grid-cols-2 gap-5 p-5">
         <MenuButton
           v-for="(menuItem, index) in menuItems"
@@ -46,7 +48,7 @@
 
   const appStore = useAppStore()
   const { isMenuNavOpen, menuItems, currentDay } = storeToRefs(appStore)
-  const { setCurrentDay, toggleMenuNav, resolveMenuComponents } = appStore
+  const { setCurrentDay, toggleMenuNav } = appStore
 
   onMounted(() => {
     setCurrentDay()

@@ -31,7 +31,7 @@
         </button></a
       >
 
-      <button class="right-nav-btn group">
+      <button @click="toggleSignIn" class="right-nav-btn group">
         <AccountCircle
           class="w-5 fill-current pt-1 text-primary transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
         />
@@ -51,6 +51,5 @@
   import { useAppStore } from '~/stores/appStore'
 
   const appStore = useAppStore()
-  const { isMenuNavOpen } = storeToRefs(appStore)
-  const { toggleMenuNav } = appStore
+  const { toggleMenuNav, toggleSignIn } = appStore
 </script>

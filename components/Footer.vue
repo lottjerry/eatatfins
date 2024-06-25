@@ -14,7 +14,7 @@
             rel="noopener noreferrer"
           >
             <Facebook
-              class="text-primary w-7 cursor-pointer fill-current pt-1 transition-all duration-500 ease-in-out hover:text-opacity-50 md:w-6"
+              class="w-7 cursor-pointer fill-current pt-1 text-primary transition-all duration-500 ease-in-out hover:text-opacity-50 md:w-6"
           /></a>
           <a
             href="https://www.doordash.com/store/fins-fresh-seafood-&-poboys-laurel-584035/?pickup=true&utm_campaign=gpa"
@@ -22,7 +22,7 @@
             rel="noopener noreferrer"
           >
             <DoorDash
-              class="text-primary w-7 cursor-pointer fill-current pt-1 transition-all duration-500 ease-in-out hover:text-opacity-50 md:w-6"
+              class="w-7 cursor-pointer fill-current pt-1 text-primary transition-all duration-500 ease-in-out hover:text-opacity-50 md:w-6"
           /></a>
           <a
             href="https://www.google.com/maps/dir//1305+W+6th+St,+Laurel,+MS+39440/@31.6957887,-89.2253126,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x888334383b809fc1:0x542ccbcea7a71af6!2m2!1d-89.1428517!2d31.6958112?entry=ttu"
@@ -30,24 +30,24 @@
             rel="noopener noreferrer"
           >
             <MapMarker
-              class="text-primary w-7 cursor-pointer fill-current pt-1 transition-all duration-500 ease-in-out hover:text-opacity-50 md:hidden md:w-6"
+              class="w-7 cursor-pointer fill-current pt-1 text-primary transition-all duration-500 ease-in-out hover:text-opacity-50 md:hidden md:w-6"
           /></a>
         </div>
         <!-- *********************** FOOTER LINKS *********************** -->
         <div
-          class="flex flex-col gap-3 p-1 text-xs transition-all duration-500 ease-in-out md:flex-row md:justify-center md:py-5 lg:py-0 md:gap-2 lg:gap-3"
+          class="flex flex-col gap-3 p-1 text-xs transition-all duration-500 ease-in-out md:flex-row md:justify-center md:gap-2 md:py-5 lg:gap-3 lg:py-0"
         >
-          <p class="footer-link">Privacy</p>
+          <p class="custom-link">Privacy</p>
           <p class="hidden md:flex">|</p>
-          <p class="footer-link">Cookies and ad policy</p>
+          <p class="custom-link">Cookies and ad policy</p>
           <p class="hidden md:flex">|</p>
-          <p class="footer-link">Terms of use</p>
+          <p class="custom-link">Terms of use</p>
           <p class="hidden md:flex">|</p>
-          <p class="footer-link">
+          <p class="custom-link">
             Do Not Sell or Share My Personal Information
           </p>
           <p class="hidden md:flex">|</p>
-          <p class="footer-link">Accessibility</p>
+          <p class="custom-link">Accessibility</p>
         </div>
       </div>
       <!-- *********************** COPYRIGHT *********************** -->
@@ -57,7 +57,7 @@
           href="https://jerrylott.com"
           target="_blank"
           rel="noopener noreferrer"
-          ><span class="footer-link">Jerry Lott</span></a
+          ><span class=" text-primary custom-link">Jerry Lott</span></a
         >.
       </p>
     </div>

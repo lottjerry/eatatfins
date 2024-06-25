@@ -5,9 +5,5 @@
   </div>
   <Footer />
   <MenuNav />
+  <SignIn />
 </template>
-
-<script setup>
-
-
-</script>

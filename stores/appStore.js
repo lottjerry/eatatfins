@@ -1,10 +1,11 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
-
 export const useAppStore = defineStore('appStore', () => {
   const isMenuNavOpen = ref(false)
+  const isSignInOpen = ref(false)
   const currentDay = ref('')
+  const showPassword = ref(false)
 
   const menuItems = ref([
     {
@@ -105,15 +106,27 @@ export const useAppStore = defineStore('appStore', () => {
     isMenuNavOpen.value = !isMenuNavOpen.value
   }
 
+  const toggleShowPassword = () => {
+    showPassword.value = !showPassword.value
+  }
+
+  const toggleSignIn = () => {
+    isSignInOpen.value = !isSignInOpen.value
+  }
+
   const setCurrentDay = () => {
     currentDay.value = new Date().toLocaleString('en-us', { weekday: 'long' })
   }
 
   return {
     isMenuNavOpen,
+    isSignInOpen,
+    toggleSignIn,
     toggleMenuNav,
+    toggleShowPassword,
     menuItems,
     currentDay,
     setCurrentDay,
+    showPassword
   }
 })

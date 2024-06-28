@@ -54,7 +54,6 @@
     setCurrentDay()
     menuItems.value.forEach(async (item) => {
       item.resolvedComponent = resolveComponent('Facebook') // Works
-      console.log(item.resolvedComponent)
     })
   })
 </script>

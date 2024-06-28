@@ -31,8 +31,9 @@
         </div>
 
         <div class="flex gap-8 text-sm">
-          <label class="custom-link flex items-center gap-1">
-            <input type="checkbox" class="accent-blue-500" /> Remember Me
+          <label class="flex items-center gap-1">
+            <input type="checkbox" class="cursor-pointer accent-blue-500" />
+            Remember Me
           </label>
           <p class="custom-link">Forgot Password?</p>
         </div>
@@ -48,7 +49,9 @@
         </button>
         <div class="mt-5 flex gap-1 text-sm">
           <p>Don't have an account?</p>
-          <p class="custom-link text-primary">Create an account</p>
+          <nuxt-link to="/create-account">
+            <p class="custom-link text-primary" @click="toggleSignIn">Create an account</p></nuxt-link
+          >
         </div>
       </div>
     </div>

@@ -1,17 +1,51 @@
 <template>
   <div class="flex flex-col items-center justify-center">
-    <div>
-      <h1 class="p-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit iure distinctio a dolor fugit nostrum et laborum nobis est. Reprehenderit dolores itaque voluptatem fuga nihil eaque voluptate nulla nemo. Repellendus deserunt voluptatum reprehenderit at, ullam tempora laudantium odit est aspernatur error magni sapiente ducimus vitae deleniti ipsum temporibus consectetur? Doloribus eaque in dolore illum, esse repudiandae. Porro atque totam ratione est molestias incidunt fuga adipisci beatae enim hic rem praesentium dolore deserunt quas, rerum, molestiae neque. Dolorum voluptas nostrum fugit officia suscipit alias minima cum nemo in nobis at eius itaque nam ullam, quas odit explicabo natus pariatur beatae ad quod sint velit. Dicta earum ullam eius iure maxime impedit, praesentium architecto, nam voluptatibus ipsam odio hic magnam minus delectus? Ad ipsam modi nihil beatae! Doloribus aut delectus nobis corrupti amet id optio cupiditate totam rem corporis, quas minima eligendi itaque modi fuga. Repudiandae aliquid cupiditate dignissimos quidem repellendus iusto neque fugit odit voluptatibus dolore libero quod reprehenderit aliquam, quae ipsa consequatur praesentium? Nostrum incidunt optio in tempora est amet soluta autem minus quia praesentium vero aperiam voluptatum earum adipisci veritatis fugit dicta, odit, repellendus sunt ad pariatur temporibus. Et mollitia officiis eius. Et corporis sunt itaque ea, odio illo.</h1>
+    <AccountFilled class="w-14 md:w-40 lg:w-32" />
+    <div class="mt-3 flex flex-col gap-3">
+      <div class="flex flex-col items-center">
+        <h1 class="md:text-2xl">Name</h1>
+        <div class="flex gap-1 text-xl font-semibold text-primary md:text-4xl">
+          <p>John</p>
+          <p>Doe</p>
+        </div>
+      </div>
+      <div class="flex flex-col items-center">
+        <h1 class="md:text-2xl">Email</h1>
+        <p class="text-xl font-semibold text-primary md:text-4xl">
+          fins@fins.com
+        </p>
+      </div>
+      <div class="flex flex-col items-center">
+        <h1 class="md:text-2xl">Phone</h1>
+        <p class="text-xl font-semibold text-primary md:text-4xl">
+          601.548.4589
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-3 flex flex-col gap-6 p-3">
+      <button
+        class="h-10 w-64 rounded-xl bg-primary text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:w-80 md:font-bold"
+      >
+        Update Account
+      </button>
+      <button
+        class="h-10 w-64 rounded-xl bg-red-600 text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:w-80 md:font-bold"
+      >
+        Delete Account
+      </button>
+    </div>
+    <div class="mt-10 hidden md:block lg:mt-5">
+      <Logo />
     </div>
   </div>
 </template>
 
 <script setup>
-definePageMeta({
-  layout: 'alternate',
-  props: {
-    headingText: 'Sign Up for Our Service'
-  }
-})
-
+  definePageMeta({
+    layout: 'alternate',
+    props: {
+      headingText: 'Sign Up for Our Service',
+    },
+  })
 </script>

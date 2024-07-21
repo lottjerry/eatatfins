@@ -15,8 +15,8 @@
         v-if="showEye"
         class="absolute bottom-2.5 right-3 w-5 cursor-pointer fill-current text-primary transition-all duration-500 ease-in-out hover:text-opacity-50"
       >
-        <EyeClosed v-if="!showPassword" @click=toggleShowPassword />
-        <Eye v-else @click=toggleShowPassword />
+        <IconsEyeClosed v-if="!showPassword" @click=toggleShowPassword />
+        <IconsEye v-else @click=toggleShowPassword />
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center justify-center">
-    <AccountFilled class="w-14 md:w-40 lg:w-32" />
+    <IconsAccountFilled class="w-14 md:w-40 lg:w-32" />
     <div class="mt-3 flex flex-col gap-3">
       <div class="flex flex-col items-center">
         <h1 class="md:text-2xl">Name</h1>
@@ -36,7 +36,7 @@
       </button>
     </div>
     <div class="mt-10 hidden md:block lg:mt-5">
-      <Logo />
+      <IconsLogo />
     </div>
   </div>
 </template>

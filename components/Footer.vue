@@ -13,7 +13,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Facebook
+            <IconsFacebook
               class="w-7 cursor-pointer fill-current pt-1 text-primary transition-all duration-500 ease-in-out hover:text-opacity-50 md:w-6"
           /></a>
           <a
@@ -21,7 +21,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <DoorDash
+            <IconsDoorDash
               class="w-7 cursor-pointer fill-current pt-1 text-primary transition-all duration-500 ease-in-out hover:text-opacity-50 md:w-6"
           /></a>
           <a
@@ -29,7 +29,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <MapMarker
+            <IconsMapMarker
               class="w-7 cursor-pointer fill-current pt-1 text-primary transition-all duration-500 ease-in-out hover:text-opacity-50 md:hidden md:w-6"
           /></a>
         </div>

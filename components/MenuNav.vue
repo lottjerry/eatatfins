@@ -9,7 +9,7 @@
     <!-- *********************** MenuNav Top Nav *********************** -->
       <div class="flex justify-between p-4 shadow-md shadow-primary/50 rounded-xl m-2">
         <h1 class="text-4xl">Menu</h1>
-        <Arrow
+        <IconsArrow
           class="w-8 cursor-pointer fill-current pt-1 text-black transition-all duration-500 ease-in-out hover:text-primary/50 hover:-translate-x-2"
           @click="toggleMenuNav"
         />

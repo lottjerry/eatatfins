@@ -5,7 +5,7 @@
     <!-- *********************** LEFT NAV *********************** -->
     <div class="flex items-center gap-5 md:gap-10 xl:gap-16">
       <button>
-        <Logo
+        <IconsLogo
           class="h-14 w-16 transition-all duration-300 ease-in md:h-20 md:w-24"
         />
       </button>
@@ -13,7 +13,7 @@
         @click="toggleMenuNav"
         class="inline-flex h-9 w-24 items-center justify-center rounded-xl bg-primary px-4 py-2 text-sm font-bold text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:h-11 md:w-32 md:text-lg"
       >
-        <Silverware class="mr-2 w-5 fill-current md:w-6" />
+        <IconsSilverware class="mr-2 w-5 fill-current md:w-6" />
         <span>Menu</span>
       </button>
     </div>
@@ -24,7 +24,7 @@
         target="_blank"
         rel="noopener noreferrer"
         ><button class="right-nav-btn group hidden md:flex">
-          <MapMarker
+          <IconsMapMarker
             class="w-5 fill-current pt-1 text-primary transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
           />
           <span>Locate Fins</span>
@@ -32,14 +32,14 @@
       >
 
       <button @click="toggleSignIn" class="right-nav-btn group">
-        <AccountCircle
+        <IconsAccountCircle
           class="w-5 fill-current pt-1 text-primary transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
         />
         <span>Sign In</span>
       </button>
       <button class="right-nav-btn group">
         <span>0</span>
-        <Shopping
+        <IconsShopping
           class="w-5 fill-current text-primary transition-all duration-500 ease-in-out group-hover:text-opacity-50 md:w-6"
         />
       </button>

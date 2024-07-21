@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen bg-primary md:flex md:flex-col md:items-center">
     <nuxt-link class="p-3 md:self-start" to="/"
-      ><BackButton title="Home"
+      ><IconsBackButton title="Home"
     /></nuxt-link>
     <h1 class="p-8 text-center text-3xl text-white md:text-5xl">
       {{ headingText }}

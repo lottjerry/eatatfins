@@ -11,7 +11,7 @@
         class="m-2 flex justify-between rounded-xl p-4 shadow-md shadow-primary/50"
       >
         <h1 class="text-4xl">Sign In</h1>
-        <Arrow
+        <IconsArrow
           class="mr-2 w-8 rotate-180 cursor-pointer fill-current pt-1 text-black transition-all duration-500 ease-in-out hover:translate-x-2 hover:text-primary/50"
           @click="toggleSignIn"
         />

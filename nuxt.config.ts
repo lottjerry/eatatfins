@@ -8,5 +8,8 @@ export default defineNuxtConfig({
   },
 
   css:["~/assets/tailwind.css"],
-  modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"]
+  modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt", "@vee-validate/nuxt"],
+  veeValidate: {
+    autoImports: true
+  }
 })

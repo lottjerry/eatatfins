@@ -7,18 +7,36 @@
         Account Information
       </h1>
       <div class="flex flex-col items-center gap-5">
-        <InputAlternate class="w-fit" id="email" label="Email" type="email" />
-        <InputAlternate
-          class="w-fit"
-          id="password"
+        <FormField
+          label="Email"
+          type="email"
+          id="email"
+          :validator="
+            string().required('Email is required.').email('Invalid email.')
+          "
+          :validate-on-change="false"
+        />
+        <FormField
           label="Password"
           type="password"
+          id="password"
+          :validator="
+            string()
+              .required('Password is required.')
+              .min(5, 'Password must be a minimum of 5 characters.')
+              .max(15, 'Password must be a maximum of 15 characters.')
+          "
         />
-        <InputAlternate
-          class="w-fit"
-          id="confirm-password"
+        <FormField
           label="Confirm Password"
           type="password"
+          id="confirmPassword"
+          :validator="
+            string()
+              .required('Password is required.')
+              .min(5, 'Password must be a minimum of 5 characters.')
+              .max(15, 'Password must be a maximum of 15 characters.')
+          "
         />
       </div>
     </div>
@@ -29,19 +47,24 @@
         Your Information
       </h1>
       <div class="flex flex-col items-center gap-5">
-        <InputAlternate
-          class="w-fit"
-          id="first-name"
+        <FormField
           label="First Name"
           type="text"
+          id="fullname"
+          :validator="string().required('First name is required.')"
         />
-        <InputAlternate
-          class="w-fit"
-          id="last-name"
-          label="Last Name"
+        <FormField
+          label="First Name"
           type="text"
+          id="fullname"
+          :validator="string().required('First name is required.')"
         />
-        <InputAlternate class="w-fit" id="phone" label="Phone" type="text" />
+        <FormField
+          label="First Name"
+          type="text"
+          id="fullname"
+          :validator="string().required('First name is required.')"
+        />
       </div>
     </div>
     <div class="m-5 flex flex-col">
@@ -66,7 +89,7 @@
       Create Account
     </button>
 
-    <div class="mt-10 flex gap-1 text-sm md:text-lg">
+    <div class="my-10 flex gap-1 text-sm md:text-lg mb-20">
       <p>Already have an account?</p>
       <p class="custom-link text-primary" @click="toggleSignIn">Sign In</p>
     </div>
@@ -74,6 +97,8 @@
 </template>
 
 <script setup>
+  import { string } from 'yup'
+
   definePageMeta({
     layout: 'alternate',
   })

@@ -13,7 +13,6 @@
       odio incidunt officiis atque ab. Dolore dicta in impedit voluptate id
       ducimus voluptatem adipisci commodi, eaque tempora autem esse.
     </p>
-    <div class="m-10"><FormComponent /></div>
   </div>
 </template>
 

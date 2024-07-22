@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center">
+  <form class="flex flex-col items-center justify-center" @submit="submit">
     <div class="flex flex-col items-center gap-3">
       <h1
         class="p-3 text-lg font-medium underline decoration-2 underline-offset-4 md:text-2xl"
@@ -7,36 +7,26 @@
         Account Information
       </h1>
       <div class="flex flex-col items-center gap-5">
-        <FormField
+        <InputField
+          :define-input-binds="defineInputBinds"
+          :error-bag="errorBag"
+          name="email"
           label="Email"
-          type="email"
-          id="email"
-          :validator="
-            string().required('Email is required.').email('Invalid email.')
-          "
-          :validate-on-change="false"
+          input-type="email"
         />
-        <FormField
+        <InputField
+          :define-input-binds="defineInputBinds"
+          :error-bag="errorBag"
+          name="password"
           label="Password"
-          type="password"
-          id="password"
-          :validator="
-            string()
-              .required('Password is required.')
-              .min(5, 'Password must be a minimum of 5 characters.')
-              .max(15, 'Password must be a maximum of 15 characters.')
-          "
+          input-type="password"
         />
-        <FormField
+        <InputField
+          :define-input-binds="defineInputBinds"
+          :error-bag="errorBag"
+          name="passwordConfirm"
           label="Confirm Password"
-          type="password"
-          id="confirmPassword"
-          :validator="
-            string()
-              .required('Password is required.')
-              .min(5, 'Password must be a minimum of 5 characters.')
-              .max(15, 'Password must be a maximum of 15 characters.')
-          "
+          input-type="password"
         />
       </div>
     </div>
@@ -47,23 +37,23 @@
         Your Information
       </h1>
       <div class="flex flex-col items-center gap-5">
-        <FormField
+        <InputField
+          :define-input-binds="defineInputBinds"
+          :error-bag="errorBag"
+          name="firstName"
           label="First Name"
-          type="text"
-          id="fullname"
-          :validator="string().required('First name is required.')"
         />
-        <FormField
-          label="First Name"
-          type="text"
-          id="fullname"
-          :validator="string().required('First name is required.')"
+        <InputField
+          :define-input-binds="defineInputBinds"
+          :error-bag="errorBag"
+          name="lastName"
+          label="Last Name"
         />
-        <FormField
-          label="First Name"
-          type="text"
-          id="fullname"
-          :validator="string().required('First name is required.')"
+        <InputField
+          :define-input-binds="defineInputBinds"
+          :error-bag="errorBag"
+          name="phone"
+          label="Phone"
         />
       </div>
     </div>
@@ -85,25 +75,49 @@
 
     <button
       class="h-10 w-64 rounded-xl bg-primary text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:w-80 md:text-xl"
+      type="submit"
     >
       Create Account
     </button>
 
-    <div class="my-10 flex gap-1 text-sm md:text-lg mb-20">
+    <div class="my-10 mb-20 flex gap-1 text-sm md:text-lg">
       <p>Already have an account?</p>
       <p class="custom-link text-primary" @click="toggleSignIn">Sign In</p>
     </div>
-  </div>
+  </form>
 </template>
 
 <script setup>
-  import { string } from 'yup'
+  import { string, object, ref } from 'yup'
+  import { useAppStore } from '~/stores/appStore'
+
+  const schema = object({
+    email: string()
+      .email('Please enter a valid email')
+      .required('Please enter an email'),
+    password: string()
+      .required('Please enter a password')
+      .min(6, 'Password must be a minimum of 6 characters.'),
+    passwordConfirm: string()
+      .required('Please enter a password')
+      .min(6, 'Password must be a minimum of 6 characters.')
+      .oneOf([ref('password')], 'Password must match'),
+    firstName: string().required('Please enter your first name.'),
+    lastName: string().required('Please enter your last name.'),
+    phone: string().required('Please enter your phone number.'),
+  })
+
+  const { defineInputBinds, values, errorBag, handleSubmit } = useForm({
+    validationSchema: schema,
+  })
+
+  const submit = handleSubmit(() => {
+    alert(JSON.stringify(values))
+  })
 
   definePageMeta({
     layout: 'alternate',
   })
-
-  import { useAppStore } from '~/stores/appStore'
 
   const appStore = useAppStore()
   const { toggleSignIn } = appStore

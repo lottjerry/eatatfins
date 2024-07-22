@@ -27,53 +27,47 @@
 </script>
 
 <template>
-  <form @submit="submit">
-    <input-field
+  <form class="flex flex-col items-center gap-5"  @submit="submit">
+    <InputField
       :define-input-binds="defineInputBinds"
       :error-bag="errorBag"
       name="email"
       label="Email"
+      input-type="email"
     />
-    <input-field
+    <InputField
       :define-input-binds="defineInputBinds"
       :error-bag="errorBag"
       name="password"
       label="Password"
       input-type="password"
     />
-    <input-field
+    <InputField
       :define-input-binds="defineInputBinds"
       :error-bag="errorBag"
       name="passwordConfirm"
       label="Confirm Password"
       input-type="password"
     />
-    <input-field
+    <InputField
       :define-input-binds="defineInputBinds"
       :error-bag="errorBag"
       name="firstName"
       label="First Name"
     />
-    <input-field
+    <InputField
       :define-input-binds="defineInputBinds"
       :error-bag="errorBag"
       name="lastName"
       label="Last Name"
     />
-    <input-field
+    <InputField
       :define-input-binds="defineInputBinds"
       :error-bag="errorBag"
       name="phone"
       label="Phone"
     />
-    <button type="submit">Submit</button>
+    <button class="h-10 w-64 rounded-xl bg-primary text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:w-80 md:text-xl" type="submit">Create Account</button>
   </form>
 </template>
 
-<style scoped>
-  .flex {
-    display: flex;
-    flex-direction: column;
-    max-width: 20rem;
-  }
-</style>

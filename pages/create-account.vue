@@ -1,94 +1,99 @@
 <template>
-  <Form
-    class="flex flex-col items-center justify-center"
-    @submit="onSubmit"
-    :validation-schema="schema"
-    v-slot="{ errors }"
-  >
-    <div class="flex flex-col items-center gap-3">
-      <h1
-        class="p-3 text-lg font-medium underline decoration-2 underline-offset-4 md:text-2xl"
-      >
-        Account Information
-      </h1>
-      <div class="flex flex-col items-center gap-5">
-        <InputField
-          name="email"
-          label="Email"
-          type="string"
-          :error="errors.email || ''"
-        />
-        <InputField
-          name="password"
-          label="Password"
-          type="password"
-          :error="errors.password || ''"
-        />
-        <InputField
-          name="passwordConfirm"
-          label="Confirm Password"
-          type="password"
-          :error="errors.passwordConfirm || ''"
-        />
-      </div>
-    </div>
-    <div class="flex flex-col items-center gap-3">
-      <h1
-        class="p-3 text-lg font-medium underline decoration-2 underline-offset-4 md:text-2xl"
-      >
-        Your Information
-      </h1>
-      <div class="flex flex-col items-center gap-5">
-        <InputField
-          name="firstName"
-          label="First Name"
-          type="string"
-          :error="errors.firstName || ''"
-        />
-        <InputField
-          name="lastName"
-          label="Last Name"
-          type="string"
-          :error="errors.lastName || ''"
-        />
-        <InputField
-          name="phone"
-          label="Phone"
-          type="string"
-          :error="errors.phone || ''"
-        />
-      </div>
-    </div>
-    <div class="m-5 flex flex-col">
-      <AcceptField
-        name="termsAndConditions"
-        label="Terms & Conditions."
-        :error="errors.termsAndConditions || ''"
-      />
-      <AcceptField
-        name="termsOfUse"
-        label="Terms of Use."
-        :error="errors.termsOfUse || ''"
-      />
-      <AcceptField
-        name="privacyPolicy"
-        label="Privacy Policy."
-        :error="errors.privacyPolicy || ''"
-      />
-    </div>
-
-    <button
-      class="h-10 w-64 rounded-xl bg-primary text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:w-80 md:text-xl"
-      type="submit"
+  <h1 class="p-8 text-center text-3xl text-white md:text-5xl">
+    Create a free account now
+  </h1>
+  <div class="h-fit rounded-t-3xl bg-white p-5 md:w-3/4 xl:w-1/2">
+    <Form
+      class="flex flex-col items-center justify-center pt-5 md:pt-10 md:gap-10 lg:gap-0 lg:pt-0"
+      @submit="onSubmit"
+      :validation-schema="schema"
+      v-slot="{ errors }"
     >
-      Create Account
-    </button>
+      <div class="flex flex-col items-center gap-3">
+        <h1
+          class="p-3 text-lg font-medium underline decoration-2 underline-offset-4 md:text-2xl"
+        >
+          Account Information
+        </h1>
+        <div class="flex flex-col items-center gap-5">
+          <InputField
+            name="email"
+            label="Email"
+            type="string"
+            :error="errors.email || ''"
+          />
+          <InputField
+            name="password"
+            label="Password"
+            type="password"
+            :error="errors.password || ''"
+          />
+          <InputField
+            name="passwordConfirm"
+            label="Confirm Password"
+            type="password"
+            :error="errors.passwordConfirm || ''"
+          />
+        </div>
+      </div>
+      <div class="flex flex-col items-center gap-3">
+        <h1
+          class="p-3 text-lg font-medium underline decoration-2 underline-offset-4 md:text-2xl"
+        >
+          Your Information
+        </h1>
+        <div class="flex flex-col items-center gap-5">
+          <InputField
+            name="firstName"
+            label="First Name"
+            type="string"
+            :error="errors.firstName || ''"
+          />
+          <InputField
+            name="lastName"
+            label="Last Name"
+            type="string"
+            :error="errors.lastName || ''"
+          />
+          <InputField
+            name="phone"
+            label="Phone"
+            type="string"
+            :error="errors.phone || ''"
+          />
+        </div>
+      </div>
+      <div class="m-5 flex flex-col">
+        <AcceptField
+          name="termsAndConditions"
+          label="Terms & Conditions."
+          :error="errors.termsAndConditions || ''"
+        />
+        <AcceptField
+          name="termsOfUse"
+          label="Terms of Use."
+          :error="errors.termsOfUse || ''"
+        />
+        <AcceptField
+          name="privacyPolicy"
+          label="Privacy Policy."
+          :error="errors.privacyPolicy || ''"
+        />
+      </div>
 
-    <div class="my-10 mb-20 flex gap-1 text-sm md:text-lg">
-      <p>Already have an account?</p>
-      <p class="custom-link text-primary" @click="toggleSignIn">Sign In</p>
-    </div>
-  </Form>
+      <button
+        class="h-10 w-64 rounded-xl bg-primary text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:w-80 md:text-xl"
+        type="submit"
+      >
+        Create Account
+      </button>
+
+      <div class="my-10 mb-20 flex gap-1 text-sm md:text-lg">
+        <p>Already have an account?</p>
+        <p class="custom-link text-primary" @click="toggleSignIn">Sign In</p>
+      </div>
+    </Form>
+  </div>
 </template>
 
 <script setup>

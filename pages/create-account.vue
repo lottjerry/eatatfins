@@ -4,7 +4,7 @@
   </h1>
   <div class="h-fit rounded-t-3xl bg-white p-5 md:w-3/4 xl:w-1/2">
     <Form
-      class="flex flex-col items-center justify-center pt-5 md:pt-10 md:gap-10 lg:gap-0 lg:pt-0"
+      class="flex flex-col items-center justify-center pt-5 md:gap-10 md:pt-10 lg:gap-0 lg:pt-0"
       @submit="onSubmit"
       :validation-schema="schema"
       v-slot="{ errors }"
@@ -100,6 +100,9 @@
   import { string, object, ref } from 'yup'
   import { useAppStore } from '~/stores/appStore'
 
+  const phoneRegExp =
+    /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/
+
   const schema = object({
     email: string()
       .email('Please enter a valid email.')
@@ -113,12 +116,14 @@
       .oneOf([ref('password')], 'Password must match.'),
     firstName: string().required('Please enter your first name.'),
     lastName: string().required('Please enter your last name.'),
-    phone: string().required('Please enter your phone number.'),
+    phone: string()
+      .required('Please enter your phone number.')
+      .matches(phoneRegExp, 'Phone number is not valid.').max(10,'Phone number is not valid.'),
     termsAndConditions: string().required(
       'Please accept the Terms & Conditions.',
     ),
     termsOfUse: string().required('Please accept the Terms of Use.'),
-    privacyPolicy: string().required('Please accept the Terms & Conditions.'),
+    privacyPolicy: string().required('Please accept the Privacy Policy.'),
   })
 
   const onSubmit = (values) => {

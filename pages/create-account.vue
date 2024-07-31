@@ -118,7 +118,7 @@
     lastName: string().required('Please enter your last name.'),
     phone: string()
       .required('Please enter your phone number.')
-      .matches(phoneRegExp, 'Phone number is not valid.').max(10,'Phone number is not valid.'),
+      .matches(phoneRegExp, 'Phone number is not valid.').max(10,'Phone number is not valid.').min(10,'Phone number is not valid.'),
     termsAndConditions: string().required(
       'Please accept the Terms & Conditions.',
     ),

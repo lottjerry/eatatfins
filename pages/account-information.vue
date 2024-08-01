@@ -31,18 +31,12 @@
         </div>
       </div>
 
-      <div class="mt-3 flex flex-col gap-6 p-3">
-        <button
-          class="h-10 w-64 rounded-xl bg-primary text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:w-80 md:font-bold"
-        >
-          Update Account
-        </button>
-        <button
-          class="h-10 w-64 rounded-xl bg-red-600 text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:w-80 md:font-bold"
-        >
-          Delete Account
-        </button>
-      </div>
+      <button
+        class="h-10 w-64 rounded-xl bg-red-600 text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:w-80 md:font-bold m-20"
+      >
+        Delete Account
+      </button>
+
       <div class="mt-10 hidden md:block lg:mt-5">
         <IconsLogo />
       </div>

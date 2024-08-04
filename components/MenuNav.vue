@@ -2,15 +2,17 @@
   <div class="flex">
     <div
       :class="[
-        'fixed inset-y-0 left-0 w-full md:w-[400px] bg-white text-black transition-all duration-500 ease-in-out md:border md:rounded-xl',
+        'fixed inset-y-0 left-0 w-full bg-white text-black transition-all duration-500 ease-in-out md:w-[400px] md:rounded-xl md:border',
         { '-translate-x-full': !isMenuNavOpen },
       ]"
     >
-    <!-- *********************** MenuNav Top Nav *********************** -->
-      <div class="flex justify-between p-4 shadow-md shadow-primary/50 rounded-xl m-2">
+      <!-- *********************** MenuNav Top Nav *********************** -->
+      <div
+        class="m-2 flex justify-between rounded-xl p-4 shadow-md shadow-primary/50"
+      >
         <h1 class="text-4xl">Menu</h1>
         <IconsArrow
-          class="w-8 cursor-pointer fill-current pt-1 text-black transition-all duration-500 ease-in-out hover:text-primary/50 hover:-translate-x-2"
+          class="w-8 cursor-pointer fill-current pt-1 text-black transition-all duration-500 ease-in-out hover:-translate-x-2 hover:text-primary/50"
           @click="toggleMenuNav"
         />
       </div>
@@ -28,13 +30,6 @@
               menuItem.isSpecial && menuItem.specialDay !== currentDay,
           }"
         >
-          <component :is="menuItem.resolvedComponent"   :class="{
-            'btn-icon':
-              menuItem.isSpecial === false ||
-              (menuItem.isSpecial && menuItem.specialDay === currentDay),
-            'btn-icon-disabled':
-              menuItem.isSpecial && menuItem.specialDay !== currentDay,
-          }"/>
         </MenuButton>
       </nav>
     </div>
@@ -43,7 +38,7 @@
 
 <script setup>
   import { storeToRefs } from 'pinia'
-  import { onMounted, resolveComponent } from 'vue'
+  import { onMounted } from 'vue'
   import { useAppStore } from '~/stores/appStore'
 
   const appStore = useAppStore()
@@ -52,8 +47,5 @@
 
   onMounted(() => {
     setCurrentDay()
-    menuItems.value.forEach(async (item) => {
-      item.resolvedComponent = resolveComponent('Facebook') // Works
-    })
   })
 </script>

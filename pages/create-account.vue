@@ -82,8 +82,9 @@
       </div>
 
       <button
-        class="h-10 w-64 rounded-xl bg-primary text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:w-80 md:text-xl"
+        class="h-10 w-64 rounded-xl bg-primary text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:w-80 md:text-xl disabled:bg-opacity-50 disabled:cursor-not-allowed disabled:hover:rounded-xl"
         type="submit"
+        :disabled="hasErrors(errors)"
       >
         Create Account
       </button>
@@ -137,4 +138,9 @@
 
   const appStore = useAppStore()
   const { toggleSignIn } = appStore
+
+  const hasErrors = (errors) => {
+  return Object.keys(errors).length > 0
+}
+
 </script>

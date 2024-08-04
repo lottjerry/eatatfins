@@ -1,38 +1,54 @@
 <template>
-  <h1 class="p-8 text-center text-3xl text-white md:text-5xl">
-    Account Information
-  </h1>
+  <h1 class="m-8 text-center text-3xl text-white md:text-5xl">My Account</h1>
   <div
-    class="h-fit rounded-t-3xl bg-white p-5 md:h-screen md:w-3/4 lg:h-fit xl:w-1/2"
+    class="h-fit rounded-t-3xl bg-white md:h-screen md:w-3/4 lg:h-fit xl:w-1/2"
   >
-    <div class="flex flex-col items-center justify-center">
-      <IconsAccountFilled class="w-14 md:w-40 lg:w-32" />
-      <div class="mt-3 flex flex-col gap-3">
-        <div class="flex flex-col items-center">
-          <h1 class="md:text-2xl">Name</h1>
-          <div
-            class="flex gap-1 text-xl font-semibold text-primary md:text-4xl"
-          >
-            <p>John</p>
-            <p>Doe</p>
-          </div>
-        </div>
-        <div class="flex flex-col items-center">
-          <h1 class="md:text-2xl">Email</h1>
-          <p class="text-xl font-semibold text-primary md:text-4xl">
-            fins@fins.com
-          </p>
-        </div>
-        <div class="flex flex-col items-center">
-          <h1 class="md:text-2xl">Phone</h1>
-          <p class="text-xl font-semibold text-primary md:text-4xl">
-            601.548.4589
-          </p>
-        </div>
-      </div>
+    <Form
+      @submit="onSubmit"
+      :validation-schema="schema"
+      v-slot="{ errors }"
+      class="flex h-screen flex-col items-center gap-10"
+    >
+      <h1 class="mt-4 text-3xl text-primary">My Info</h1>
+      <InputField
+        name="firstName"
+        label="First Name"
+        type="string"
+        :error="errors.firstName || ''"
+        :value="defaultValues.firstName"
+      />
+      <InputField
+        name="lastName"
+        label="Last Name"
+        type="string"
+        :error="errors.lastName || ''"
+        :value="defaultValues.lastName"
+      />
+      <InputField
+        name="email"
+        label="Email"
+        type="string"
+        :error="errors.email || ''"
+        :value="defaultValues.email"
+      />
+      <InputField
+        name="phone"
+        label="Phone"
+        type="string"
+        :error="errors.phone || ''"
+        :value="defaultValues.phone"
+      />
 
       <button
-        class="h-10 w-64 rounded-xl bg-red-600 text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:w-80 md:font-bold m-20"
+        class="h-10 w-64 rounded-xl bg-primary text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 disabled:cursor-not-allowed disabled:bg-opacity-50 disabled:hover:rounded-xl md:w-80 md:font-bold"
+        type="submit"
+        :disabled="hasErrors(errors)"
+      >
+        Save
+      </button>
+
+      <button
+        class="h-10 w-64 rounded-xl bg-red-600 text-white transition-all duration-500 ease-in-out hover:rounded-3xl hover:bg-opacity-50 md:w-80 md:font-bold"
       >
         Delete Account
       </button>
@@ -40,15 +56,46 @@
       <div class="mt-10 hidden md:block lg:mt-5">
         <IconsLogo />
       </div>
-    </div>
+    </Form>
   </div>
 </template>
 
 <script setup>
+  import { string, object } from 'yup'
+
+  const phoneRegExp =
+    /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/
+
+  const schema = object({
+    email: string()
+      .email('Please enter a valid email.')
+      .required('Please enter an email.'),
+    firstName: string().required('Please enter your first name.'),
+    lastName: string().required('Please enter your last name.'),
+    phone: string()
+      .required('Please enter your phone number.')
+      .matches(phoneRegExp, 'Phone number is not valid.')
+      .max(10, 'Phone number is not valid.')
+      .min(10, 'Phone number is not valid.'),
+  })
+
+  const defaultValues = {
+    firstName: 'Tyger',
+    lastName: 'Jacobs',
+    email: 'tyger.jacobs@fins.com',
+    phone: '6013425141',
+  }
+
+  const onSubmit = (values) => {
+    // display form values on success
+    alert('SUCCESS!!\n\n' + JSON.stringify(values, null, 4))
+  }
+
   definePageMeta({
     layout: 'alternate',
-    props: {
-      headingText: 'Sign Up for Our Service',
-    },
   })
+
+  const hasErrors = (errors) => {
+    return Object.keys(errors).length > 0
+  }
 </script>

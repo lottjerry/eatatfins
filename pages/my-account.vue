@@ -9,7 +9,11 @@
       v-slot="{ errors }"
       class="flex h-screen flex-col items-center gap-10"
     >
-      <h1 class="mt-4 text-3xl text-primary">My Info</h1>
+      <h1
+        class="p-3 text-lg font-medium underline decoration-2 underline-offset-4 md:text-2xl"
+      >
+        My Information
+      </h1>
       <InputField
         name="firstName"
         label="First Name"
